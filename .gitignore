@@ -1,0 +1,12 @@
+*.DS_Store
+/.bundle
+/.zenflow-log
+/config/*.yml
+/coverage
+/db/*.sqlite3
+/db/*.sqlite3-journal
+/log/*
+!/log/.keep
+/spec/tmp
+/tmp
+/vendor/bundle
