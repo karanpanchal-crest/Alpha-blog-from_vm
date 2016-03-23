@@ -24,6 +24,22 @@ $navbar-default-bg: black;
   color: #020202;
 }
 
+.article-actions {
+  border-top: 1px solid #eaeaea;
+  padding-top: 5px;
+  font-size: 15px;
+}
+
+.article-title {
+  font-weight: bold;
+  font-size:20px;
+}
+
+.article-body {
+  border-top: 1px solid #eaeaea;
+  font-size: 15px;
+}
+
 .jumbotron {
   text-align: center;
   background-image: asset-url('home_background.png');
@@ -53,7 +69,8 @@ $navbar-default-bg: black;
   border-top: 1px solid #aaaaaa;
   margin-top : 40px;
   padding-right: 10px;
-
+  padding-top: 5px;
+  color: #777;
 }
 
 .footer small {
