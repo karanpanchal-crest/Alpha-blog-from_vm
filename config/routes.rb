@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   #get 'pages/home'
   resources :articles
- 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -10,6 +9,7 @@ Rails.application.routes.draw do
   get 'pages/home', to: 'pages#home'
   get 'pages/about', to: 'pages#about'
   get 'pages/index', to: 'pages#index'
+  resources :users
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
