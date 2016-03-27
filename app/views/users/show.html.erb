@@ -7,5 +7,13 @@
 
 <h4 align="center"><%= @user.username %>'s Articles</h4>
 
-<%= render 'articles/listartciles', obj: @user.articles %>
+<div align="center">
+  <%= will_paginate @user_articles%>
+</div>
+<%= render 'articles/listartciles', obj: @user_articles %>
+<div align="center">
+  <%= will_paginate @user_articles%>
+</div>
+
+
 

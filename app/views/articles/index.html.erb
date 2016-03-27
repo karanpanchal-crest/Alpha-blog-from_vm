@@ -1,3 +1,5 @@
 <h2 align="center"><strong> Listing of all Articles</strong> </h2>
 
-<%= render 'listartciles', obj: @article %> 
+<%= will_paginate %>
+<%= render 'listartciles', obj: @articles %>
+<%= will_paginate %> 

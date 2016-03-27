@@ -9,6 +9,11 @@ Rails.application.routes.draw do
   get 'pages/home', to: 'pages#home'
   get 'pages/about', to: 'pages#about'
   get 'pages/index', to: 'pages#index'
+  
+  get 'login', to: 'sessions#new'
+  post 'login', to: 'sessions#create'
+  delete 'logout', to: 'sessions#destroy'
+
   resources :users
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
