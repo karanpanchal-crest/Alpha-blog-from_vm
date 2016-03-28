@@ -6,7 +6,8 @@
     <div class="row center">
       <div class="col-md-4 col-md-offset-4">
         <div class="listing">
-          <%= link_to gravatar_for(@article.user), user_path(@article.user) %>
+          <li>Created By:</li>
+          <li><%= link_to gravatar_for(@article.user), user_path(@article.user) %></li>
           <div class="article-title" style="margin-left:10px;"><%= link_to @article.user.username, user_path(@article.user) %></div>
           <div><%= pluralize(@article.user.articles.count, "articles") %></div>
         </div>
@@ -19,7 +20,7 @@
      <h4> <%= simple_format(@article.description) %></h4>
     <div class="article-actions">
     <%= link_to 'List all Articles', articles_path, class: "btn btn-md btn-success" %>
-   <% if logged_in? && current_user == @article.user %>
+   <% if logged_in? && (current_user == @article.user || current_user.admin?) %>
      <%= link_to "Delete", article_path(@article), method: :delete, data: {confirm:"Are you sure you want to delete the article?"}, class: "btn btn-md btn-danger" %>
      <%= link_to 'Edit Article', edit_article_path(@article), class: "btn btn-md btn-primary" %>
    <% end %>
