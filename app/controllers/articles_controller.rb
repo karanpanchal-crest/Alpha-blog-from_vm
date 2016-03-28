@@ -1,6 +1,8 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:edit, :update, :show, :destroy]
-  
+  before_action :require_user, except: [:index]
+  before_action :require_same_user, only: [:edit, :update, :delete]
+
   def index
     @articles = Article.paginate(page: params[:page], per_page: 5)
   end
@@ -35,7 +37,7 @@ class ArticlesController < ApplicationController
     end
   end
   
-  def edit
+  def edit  
   end
 
   def destroy
@@ -52,6 +54,13 @@ class ArticlesController < ApplicationController
 
     def article_params
       params.require(:article).permit(:title, :description)
+    end
+  
+    def require_same_user
+      if current_user != @article.user
+        flash[:danger] = "You do not have authentication to edit other user's articles"
+        redirect_to users_path
+      end
     end
  
 
