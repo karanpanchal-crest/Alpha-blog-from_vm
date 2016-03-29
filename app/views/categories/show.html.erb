@@ -1,1 +1,10 @@
-<h1 align="center">Category: <%= @category.name %></h1>
+<h1 align="center"><strong><span style="text-transform:capitalize;"><%= @category.name %></span> Articles</strong></h1>
+
+<div align="center">
+  <%= will_paginate @articles%>
+</div>
+  <%= render 'articles/listartciles', obj:@articles %>
+<div align="center">
+  <%= will_paginate @articles%>
+</div>
+

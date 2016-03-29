@@ -15,6 +15,13 @@
                 updated at: <%= time_ago_in_words(article.updated_at)%> ago</small>
         </div>
       </div>
+     
+      <div class="article_categories"> 
+      <% if article.categories.any? %>
+        <p>Categories: <%= render article.categories %></p>
+      <% end %>
+      </div>
+
 
       <% if logged_in? && (current_user == article.user || current_user.admin?) %>
       <div class="article-actions">
